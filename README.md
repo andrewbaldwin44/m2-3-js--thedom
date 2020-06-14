@@ -1,5 +1,9 @@
 # JavaScript - The DOM
 
+## The Great Frog Race Demo
+
+[View Live](https://andrewbaldwin44.github.io/The_Great_Frog_Race/)
+
 ## Exercise 1 - Creating DOM Nodes
 
 <img src="./__lecture/assets/exercise-1.png" />
@@ -28,10 +32,6 @@ In other words: We'll start by recreating the HTML structure, without worrying a
 You'll need to make extensive use of `document.createElement`!
 
 ---
-
-## Demo
-
-[View Live](https://andrewbaldwin44.github.io/The_Great_Frog_Race/)
 
 ## Exercise 2 - The Frog Race
 
