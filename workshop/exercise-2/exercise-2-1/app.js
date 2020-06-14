@@ -61,7 +61,6 @@ class FrogRace {
         this.placePodium(frog);
 
         clearInterval(bounce);
-
       }
       else {
         document.querySelector(`#${frog.lane} .frog`).style.left = `${progress}%`;
@@ -70,13 +69,18 @@ class FrogRace {
   }
 
   placePodium(frog) {
-    // frog.frog.style.transform = 'scale(0.1)';
+    frog.frog.style.transform = 'scale(0.1)';
 
     let rank = this.ranking.indexOf(frog);
     let podiumSection = document.querySelector('.podium');
     let stand = document.querySelector(`#frogSeat-${rank + 1}`);
+    stand.style.transition = 'transform 2s';
 
-    stand.appendChild(frog.frog);
+    setTimeout(() => {
+      frog.frog.style.transform = 'scale(1)';
+      frog.frog.style.left = 0;
+      stand.appendChild(frog.frog);
+    }, 2000);
   }
 
   restartRace() {
