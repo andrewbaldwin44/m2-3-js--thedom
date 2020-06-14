@@ -29,6 +29,10 @@ You'll need to make extensive use of `document.createElement`!
 
 ---
 
+## Demo
+
+[View Live](https://andrewbaldwin44.github.io/The_Great_Frog_Race/)
+
 ## Exercise 2 - The Frog Race
 
 <img src="./__lecture/assets/exercise-2.gif" />

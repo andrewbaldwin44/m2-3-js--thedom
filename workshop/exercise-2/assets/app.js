@@ -29,7 +29,7 @@ class FrogRace {
       lane.setAttribute('id', `frog-${i}`);
       laneNumber.textContent = i + 1;
 
-      frog.setAttribute('src', '../assets/frogx50.png');
+      frog.setAttribute('src', 'assets/frogx50.png');
       frog.setAttribute('alt', this.racingFrogs[i].number);
       frog.setAttribute('class', 'frog');
       frogProgress.setAttribute('id', this.racingFrogs[i].name);
