@@ -19,17 +19,19 @@ class FrogRace {
     for (let i = 0; i < this.numberOfRacers; i++) {
       let lane = document.createElement('li');
       let laneNumber = document.createElement('span');
-      let frog = document.createElement('span');
+      let frog = document.createElement('img');
       let frogProgress = document.createElement('span');
 
+      this.racingFrogs[i].frog = frog;
       this.racingFrogs[i].progress = 0;
       this.racingFrogs[i].lane = `frog-${i}`;
 
       lane.setAttribute('id', `frog-${i}`);
       laneNumber.textContent = i + 1;
-      frog.textContent = this.racingFrogs[i].number;
+
+      frog.setAttribute('src', '../assets/frogx50.png');
+      frog.setAttribute('alt', this.racingFrogs[i].number);
       frog.setAttribute('class', 'frog');
-      frog.style.backgroundColor = this.racingFrogs[i].color;
       frogProgress.setAttribute('id', this.racingFrogs[i].name);
 
       this.track.appendChild(lane);
@@ -48,19 +50,38 @@ class FrogRace {
     let progress = frog.progress;
     const distanceHopped = (Math.floor(Math.random() * 100) / this.trackLength) * 100;
 
-    const bounce = setInterval(() => {
+    let bounce = setInterval(() => {
       progress += distanceHopped;
 
       if (progress > 100) {
         progress = 100;
-        console.log(frog.name, ' has finished!');
-        clearInterval(bounce);
 
         this.ranking.push(frog);
-      }
+        console.log(frog.name, ' has finished!');
+        this.placePodium(frog);
 
-      document.querySelector(`#${frog.lane} .frog`).style.left = `${progress}%`;
+        clearInterval(bounce);
+
+      }
+      else {
+        document.querySelector(`#${frog.lane} .frog`).style.left = `${progress}%`;
+      }
     }, Math.random() * 1000);
+  }
+
+  placePodium(frog) {
+    // frog.frog.style.transform = 'scale(0.1)';
+
+    let rank = this.ranking.indexOf(frog);
+    let podiumSection = document.querySelector('.podium');
+    let stand = document.querySelector(`#frogSeat-${rank + 1}`);
+
+    stand.appendChild(frog.frog);
+  }
+
+  restartRace() {
+    clearInterval(bounce);
+    this.startRace()
   }
 }
 
@@ -68,3 +89,8 @@ let frogRace = new FrogRace();
 frogRace.determineRacers();
 frogRace.createTrack();
 frogRace.startRace();
+
+newRace = document.querySelector('#newRace');
+newRace.addEventListener('click', () => {
+  // frogRace.restartRace();
+});

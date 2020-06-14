@@ -1,6 +1,16 @@
+body {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-image: linear-gradient(180deg, #78C0E0, #449DD1, #3943B7);
+  height: 100vh;
+}
+
 main {
   padding: 0 36px;
 }
+
 .track {
   list-style-type: none;
   margin: 0;
@@ -38,6 +48,7 @@ main {
   justify-content: center;
   width: calc(100% - 50px);
 }
+
 .length-value {
   display: flex;
   align-items: center;
@@ -46,8 +57,9 @@ main {
   height: 32px;
   padding: 0 10px;
 }
+
 .frog {
-  border-radius: 50%;
+  transform: rotate(90deg);
   color: #fff;
   font-weight: 700;
   display: flex;
@@ -57,5 +69,71 @@ main {
   width: 50px;
   position: relative;
   left: 0;
-  transition: all ease-out 300ms;
+  transition: left ease-out 300ms, transform 4s;
+}
+
+.podium {
+  display: flex;
+  margin: 10vh auto;
+  height: 30vh;
+  width: 60vw;
+}
+
+.podiums {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+}
+
+.firstPlace, .secondPlace, .thirdPlace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  width: 100%;
+  border-bottom: 5px solid #3a3633;
+}
+
+.firstPlace, .secondPlace {
+  box-shadow: 5px -5px 10px 0px #3a3633;
+}
+
+.secondPlace, .thirdPlace {
+  border-radius: 2px;
+}
+
+.firstPlace {
+  height: 90%;
+  background-image: linear-gradient(180deg, gold, white);
+}
+
+.secondPlace {
+  height: 60%;
+  background-image: linear-gradient(160deg, silver, white 95%);
+}
+
+.thirdPlace {
+  height: 30%;
+  background-image: linear-gradient(170deg, #CD7F32, white 95%);
+  box-shadow: 4px -5px 10px 0px #3a3633;
+}
+
+.newRaceSection {
+  display: flex;
+  justify-content: center;
+}
+
+.newRace {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: 5px solid black;
+  background-color: #3B7A57;
+  border-radius: 4px;
+  width: 400px;
+  height: 70px;
+  outline: none;
 }
