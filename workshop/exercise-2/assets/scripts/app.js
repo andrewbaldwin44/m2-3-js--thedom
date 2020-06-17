@@ -29,7 +29,7 @@ class FrogRace {
       lane.setAttribute('id', `frog-${i}`);
       laneNumber.textContent = i + 1;
 
-      frog.setAttribute('src', 'assets/frogx50.png');
+      frog.setAttribute('src', 'assets/images/frogx50.png');
       frog.setAttribute('alt', this.racingFrogs[i].number);
       frog.setAttribute('class', 'frog');
       frogProgress.setAttribute('id', this.racingFrogs[i].name);
@@ -73,7 +73,7 @@ class FrogRace {
 
     let rank = this.ranking.indexOf(frog);
     let podiumSection = document.querySelector('.podium');
-    let stand = document.querySelector(`#frogSeat-${rank + 1}`);
+    let stand = document.querySelector(`#frog-seat-${rank + 1}`);
     stand.style.transition = 'transform 2s';
 
     setTimeout(() => {
@@ -94,7 +94,7 @@ frogRace.determineRacers();
 frogRace.createTrack();
 frogRace.startRace();
 
-newRace = document.querySelector('#newRace');
+newRace = document.querySelector('#new-race');
 newRace.addEventListener('click', () => {
   // frogRace.restartRace();
 });

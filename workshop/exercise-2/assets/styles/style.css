@@ -72,14 +72,14 @@ main {
   transition: left ease-out 300ms, transform 2s;
 }
 
-.podium {
+.podiums {
   display: flex;
   margin: 10vh auto;
   height: 30vh;
   width: 60vw;
 }
 
-.podiums {
+.podium {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -88,14 +88,26 @@ main {
   width: 100%;
 }
 
-.frogSeat {
+.podium-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.frog-name {
+  font-size: 18px;
+  position: absolute;
+  bottom: 5px;
+}
+
+.frog-seat {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 55px;
 }
 
-.firstPlace, .secondPlace, .thirdPlace {
+.first-place, .second-place, .third-place {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,36 +116,36 @@ main {
   border-bottom: 5px solid #3a3633;
 }
 
-.firstPlace, .secondPlace {
+.first-place, .second-place {
   box-shadow: 5px -5px 10px 0px #3a3633;
 }
 
-.secondPlace, .thirdPlace {
+.second-place, .third-place {
   border-radius: 2px;
 }
 
-.firstPlace {
+.first-place {
   height: 80%;
   background-image: linear-gradient(180deg, gold, white);
 }
 
-.secondPlace {
+.second-place {
   height: 50%;
   background-image: linear-gradient(160deg, silver, white 95%);
 }
 
-.thirdPlace {
-  height: 30%;
+.third-place {
+  height: 40%;
   background-image: linear-gradient(170deg, #CD7F32, white 95%);
   box-shadow: 4px -5px 10px 0px #3a3633;
 }
 
-.newRaceSection {
+.new-race-section {
   display: flex;
   justify-content: center;
 }
 
-.newRace {
+.new-race {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
