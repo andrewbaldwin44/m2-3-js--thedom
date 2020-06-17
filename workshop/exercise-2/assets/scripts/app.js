@@ -77,6 +77,7 @@ class FrogRace {
     let rank = this.ranking.indexOf(frog);
     let podiumSection = document.querySelector('.podium');
     let stand = document.querySelector(`#frog-seat-${rank + 1}`);
+    let numberPlace = document.querySelector(`#frog-number-${rank + 1}`)
     let namePlace = document.querySelector(`#frog-name-${rank + 1}`);
     stand.style.transition = 'transform 2s';
 
@@ -84,6 +85,7 @@ class FrogRace {
       frog.frog.style.transform = 'scale(1)';
       frog.frog.style.left = 0;
       stand.appendChild(frog.frog);
+      numberPlace.textContent = `#${frog.number}`;
       namePlace.textContent = frog.name;
     }, 2000);
   }
