@@ -12,7 +12,8 @@ class FrogRace {
       let index = Math.floor(Math.random() * this.racingFrogs.length);
       this.racingFrogs.splice(index, 1);
     }
-    return self;
+
+    return this;
   }
 
   createTrack() {
@@ -29,7 +30,9 @@ class FrogRace {
       lane.setAttribute('id', `frog-${i}`);
       laneNumber.textContent = i + 1;
 
-      frog.setAttribute('src', 'assets/images/frogx50.png');
+      console.log(this.racingFrogs[i].color);
+
+      frog.setAttribute('src', `assets/images/${this.racingFrogs[i].color}.png`);
       frog.setAttribute('alt', this.racingFrogs[i].number);
       frog.setAttribute('class', 'frog');
       frogProgress.setAttribute('id', this.racingFrogs[i].name);
@@ -39,7 +42,7 @@ class FrogRace {
       lane.appendChild(frog);
       lane.appendChild(frogProgress);
     }
-    return self;
+    return this;
   }
 
   startRace() {
@@ -92,9 +95,7 @@ class FrogRace {
 }
 
 let frogRace = new FrogRace();
-frogRace.determineRacers();
-frogRace.createTrack();
-frogRace.startRace();
+frogRace.determineRacers().createTrack().startRace();
 
 newRace = document.querySelector('#new-race');
 newRace.addEventListener('click', () => {
