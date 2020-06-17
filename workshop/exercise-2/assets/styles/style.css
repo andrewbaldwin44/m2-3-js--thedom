@@ -101,7 +101,7 @@ main {
 }
 
 #frog-name-1 {
-  font-size: 50px;
+  font-size: 45px;
 }
 
 #frog-name-2 {
@@ -163,4 +163,13 @@ main {
   width: 400px;
   height: 70px;
   outline: none;
+  cursor: pointer;
+}
+
+.new-race:disabled {
+  cursor: default;
+}
+
+:disabled {
+  opacity: 0.5;
 }
